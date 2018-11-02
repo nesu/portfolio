@@ -1,0 +1,71 @@
+[
+    {
+        "Label": "ConsoleWrite",
+        "Pattern": "56 8B 35 00 00 00 00 57 8B 7C 24 0C 3B 35 00 00 00 00 74 13 8B 06 57",
+        "Mask": "xxx????xxxxxxx????xxxxx",
+		"Point": false
+    },
+
+    {
+        "Label": "luaL_loadfile",
+        "Pattern": "81 EC 00 00 00 00 A1 00 00 00 00 33 C4 89 84 24 00 00 00 00 53 55 8B AC 24 00 00 00 00 56 57 8B BC 24 00 00 00 00 C7 44 24 00 00 00 00 00 8B 5F 08 2B 5F 0C C1 FB 03 43 85 ED",
+        "Mask": "xx????x????xxxxx????xxxxx????xxxxx????xxx?????xxxxxxxxxxxx",
+		"Point": false
+    },
+
+    {
+        "Label": "lua_checkstack",
+        "Pattern": "FF 74 24 08 FF 74 24 08 E8 00 00 00 00 83 C4 08 85 C0 75 0D",
+        "Mask": "xxxxxxxxx????xxxxxxx",
+		"Point": false
+    },
+
+    {
+        "Label": "lua_setfield",
+        "Pattern": "E8 00 00 00 00 68 00 00 00 00 FF 77 08 E8 00 00 00 00 83 C4 20 85 C0",
+        "Mask": "x????x????xxxx????xxxxx",
+		"Point": false
+    },
+
+    {
+        "Label": "lua_pushcclosure",
+        "Pattern": "55 56 8B 74 24 0C 57 8B 4E 10 8B 41 44 3B 41 40",
+        "Mask": "xxxxxxxxxxxxxxxx",
+		"Point": false
+    },  
+
+    {
+        "Label": "luaL_loadstring",
+        "Pattern": "8B 54 24 08 83 EC 08 8B C2 56 8D 70 01",
+        "Mask": "xxxxxxxxxxxxx",
+		"Point": true
+    },
+	
+	{
+		"Label": "lua_load",
+		"Pattern": "83 EC 28 8B 44 24 30 B9 00 00 00 00 89 44 24 1C 8B 44 24 34 53 89 44 24 24 8D 44 24 18 55 8B 6C 24 34 89 44 24 08 8B 44 24 40 85 C0 56 57",
+		"Mask": "xxxxxxxx????xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+		"Point": false
+	},
+
+    {
+        "Label": "lua_pcall",
+        "Pattern": "8B 4C 24 10 83 EC 08 56 57 8B 7C 24 14 85 C9",
+        "Mask": "xxxxxxxxxxxxxxx",
+		"Point": true
+    },
+
+    {
+        "Label": "lua_newstate",
+        "Pattern": "53 8B 5C 24 08 57 8B 7C 24 10 68 00 00 00 00 6A 00 6A 00 57 FF D3 83 C4 10 85 C0 75 03",
+        "Mask": "xxxxxxxxxxx????xxxxxxxxxxxxxx",
+		"Point": true
+    },
+	
+    {
+        "Label": "lua_newthread",
+        "Pattern": "56 8B 74 24 08 8B 4E 10 8B 41 44 3B 41 40 72 09 56 E8 00 00 00 00 83 C4 04 56 E8",
+        "Mask": "xxxxxxxxxxxxxxxxxx????xxxxx",
+		"Point": true
+    }
+]

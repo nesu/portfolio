@@ -1,0 +1,26 @@
+00:09:48 | Libcore initialization finished.
+00:09:48 | Libcore::Registry started.
+00:09:48 | Function ConsoleWrite was found successfully (00B59120).
+00:09:48 | Function luaL_loadfile was found successfully (00C9AFD0).
+00:09:48 | Function lua_checkstack was found successfully (00C9AB00).
+00:09:48 | Function lua_setfield was found successfully (00C848C2).
+00:09:48 | Function lua_pushcclosure was found successfully (00C9FFA0).
+00:09:48 | Function luaL_loadstring was found successfully (00C9B220).
+00:09:48 | Function lua_load was found successfully (00C9FA20).
+00:09:48 | Function lua_pcall was found successfully (00C9FE80).
+00:09:48 | Function lua_newstate was found successfully (00C9FAD0).
+00:09:48 | Function lua_newthread was found successfully (00C9FC30).
+00:09:48 | Libcore::Registry has ended with 10 elements.
+00:09:48 | Writing game function pointers.
+00:09:48 | lua_newstate pointed successfully.
+00:09:48 | lua_newthread pointed successfully.
+00:09:48 | luaL_loadstring pointed successfully.
+00:09:48 | luaL_loadfile pointed successfully.
+00:09:48 | lua_load pointed successfully.
+00:09:48 | lua_pushcclosure pointed successfully.
+00:09:48 | lua_pcall pointed successfully.
+00:09:48 | Writing pointed function detours.
+00:09:48 | Detouring lua_newstate.
+00:09:48 | Detouring lua_load.
+00:09:49 | Master state preserved at 07013904 and new thread created at 07013A5C
+00:09:49 | Injected library has finished initializations.

@@ -1,0 +1,78 @@
+﻿mMasterState - 073BE674
+
+Pokyčio skaičiavimas.
+	Dabartinis ESP - 00EFF2C4
+	ESP prieš kviečiant NEŽINOMĄJĄ - 00EFF2B4
+	ESP pačioje funkcijoje - 00EFF2B0
+	------------------------------
+	Skirtumai
+	------------------------------
+	Iki kvietimo: 10
+	Funkcijoje: 14
+	
+	////// FUNKCIJA
+	PO sub esp, 108
+	// 00EFF1A8
+	// ESP kai perkelia pointerį į ESI	
+	00EFF1A4, perkėlimas vyksta iš esp+00EFF1A4, tai pointerio adresas 00EFF2B4
+
+	Šioje vietoje 00EFF2B4 turi pointerį į kitokį lua_State.
+
+	Apibendrinimas
+
+	Naujas lua_State adresas įrašomas į 00EFF2B4 adresą, kuris nuo pradžios taško skiriasi per 10 baitų.
+
+	Išvada
+	
+	Į nežinomąją funkciją nauajasis lua_State yra perduodamas per funkcijos argumentą.
+	Prieš kviečiant funckiją į steką įkeliami du registrai
+	
+	push eax
+	push ebp
+	// kvietimas
+
+------------------------------------------------------------------------------------------------------------------------------------------
+	
+	EBP parametro radimas
+	---------------------
+	
+	add esp,4                                      |
+	mov dword ptr ds:[ebx+A0],esi                  |
+	mov esi,dword ptr ss:[esp+9C]                  |
+	mov eax,dword ptr ds:[esi]                     |
+	---
+	---
+	mov ebp,dword ptr ds:[eax+4]                   |
+
+
+	EBP <-- PTR[EAX+4] į EAX <-- PTR į ESI; į ESI <-- ptr iš ESP+9C
+
+	ESP funkijos pradžioj 00AFF31C
+	ESP įrašant ESI 00AFF284
+	---
+	98 // 00AFF284 + 9C
+	00AFF320
+	
+	// ESP funkcijos pradžioj iki adreso leidžiančio surasti lua_State skirias per 4 bitus.
+	? Galimas argumentas ? 
+	
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

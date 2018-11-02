@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Headers">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Core">
+      <UniqueIdentifier>{08ce80db-f876-46ad-ac33-d56be9bf31f9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headers\Declarations">
+      <UniqueIdentifier>{ad217fbd-ebae-46e5-b967-97912f2eefb4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Declarations">
+      <UniqueIdentifier>{bf630669-8ce5-4ac7-8973-c98af5ad1608}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="libinit.cpp" />
+    <ClCompile Include="libcore.cpp">
+      <Filter>Headers\Declarations</Filter>
+    </ClCompile>
+    <ClCompile Include="utility.cpp">
+      <Filter>Core\Declarations</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="libinit.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="utility.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="objects.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="libcore.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="trampoline.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="redecl.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
